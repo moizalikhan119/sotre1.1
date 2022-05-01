@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,22 +9,27 @@ import {
   ScrollView,
 } from 'react-native';
 import MainHeader from '../../Components/MainHeader';
-const ProductDetail = (props, {route}) => {
+import * as CartAction from '../../Store/Action/ProductAction';
+import { useSelector, useDispatch } from 'react-redux';
+const ProductDetail = ({ navigation, route }) => {
   const product = route.params.product;
+  const dispatch = useDispatch();
   const clickEventListener = () => {
+    dispatch(CartAction.addToCartAction(product));
     Alert.alert('Success', 'Product has beed added to cart');
   };
 
+
   return (
     <>
-      <MainHeader onCart={() => props.navigation.navigate('cartScreen')} />
+      <MainHeader onCart={() => navigation.navigate('cartScreen')} />
 
       <View style={styles.container}>
         <ScrollView>
-          <View style={{alignItems: 'center', marginHorizontal: 30}}>
+          <View style={{ alignItems: 'center', marginHorizontal: 30 }}>
             <Image
               style={styles.productImg}
-              source={{uri: product.thumbNail}}
+              source={{ uri: product.image }}
             />
 
             <Text style={styles.name}>{product.name}</Text>

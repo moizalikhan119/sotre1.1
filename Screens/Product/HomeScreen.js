@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import MainHeader from '../../Components/MainHeader';
-import {useSelector, useDispatch} from 'react-redux';
-import {SliderBox} from 'react-native-image-slider-box';
+import { useSelector, useDispatch } from 'react-redux';
+import { SliderBox } from 'react-native-image-slider-box';
 import Colors from '../../Constants/Colors';
 import * as CartAction from '../../Store/Action/ProductAction';
 const HomeScreen = props => {
@@ -11,13 +11,13 @@ const HomeScreen = props => {
   const dispatch = useDispatch();
 
   const imageArray = [
-    'Assets/Images/slider1',
-    'Assets/Images/slider2',
-    'Assets/Images/slider3',
+    'https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082__340.jpg',
+    'https://cdn.pixabay.com/photo/2016/11/19/11/33/footwear-1838767__340.jpg',
+    'https://cdn.pixabay.com/photo/2017/03/13/17/26/ecommerce-2140604__340.jpg',
   ];
 
   return (
-    <View style={{height: '100%', width: '100%'}}>
+    <View style={{ height: '100%', width: '100%' }}>
       <MainHeader onCart={() => props.navigation.navigate('cartScreen')} />
       <SliderBox
         images={imageArray}
@@ -48,10 +48,10 @@ const HomeScreen = props => {
           margin: 0,
           backgroundColor: 'rgba(128, 128, 128, 0.92)',
         }}
-        ImageComponentStyle={{borderRadius: 10, width: '97%', marginTop: 5}}
+        ImageComponentStyle={{ borderRadius: 10, width: '97%', marginTop: 5 }}
         imageLoadingColor="#2196F3"
       />
-      <View style={{width: '100%', alignItems: 'center'}}>
+      <View style={{ width: '100%', alignItems: 'center' }}>
         <Text
           style={{
             marginTop: 5,
@@ -98,7 +98,7 @@ const HomeScreen = props => {
                         alignItems: 'center',
                         borderRadius: 10,
                       }}
-                      source={{uri: itemData?.item?.imageUrl}}
+                      source={{ uri: itemData?.item?.imageUrl }}
                     />
                   </View>
 
@@ -110,7 +110,7 @@ const HomeScreen = props => {
                       alignItems: 'center',
                     }}>
                     <Text
-                      style={{fontSize: 10, fontWeight: '600', color: 'black'}}>
+                      style={{ fontSize: 10, fontWeight: '600', color: 'black' }}>
                       {itemData?.item?.title}
                     </Text>
                   </View>
@@ -163,7 +163,7 @@ const HomeScreen = props => {
                     justifyContent: 'center',
                     alignItems: 'center',
                   }}>
-                  <TouchableOpacity style={{height: '60%', width: '100%'}}>
+                  <TouchableOpacity style={{ height: '60%', width: '100%' }}>
                     <Image
                       style={{
                         marginTop: 20,
@@ -171,7 +171,7 @@ const HomeScreen = props => {
                         width: '100%',
                         resizeMode: 'contain',
                       }}
-                      source={{uri: itemData?.item?.image}}
+                      source={{ uri: itemData?.item?.image }}
                     />
                   </TouchableOpacity>
                   <Text
