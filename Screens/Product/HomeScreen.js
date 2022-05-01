@@ -11,9 +11,9 @@ const HomeScreen = props => {
   const dispatch = useDispatch();
 
   const imageArray = [
-    '../Assets/Images/slider1',
-    '../Assets/Images/slider2',
-    '../Assets/Images/slider3',
+    'Assets/Images/slider1',
+    'Assets/Images/slider2',
+    'Assets/Images/slider3',
   ];
 
   return (
@@ -111,7 +111,7 @@ const HomeScreen = props => {
                     }}>
                     <Text
                       style={{fontSize: 10, fontWeight: '600', color: 'black'}}>
-                      {itemData?.item?.name}
+                      {itemData?.item?.title}
                     </Text>
                   </View>
                 </TouchableOpacity>

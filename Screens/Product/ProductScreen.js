@@ -104,7 +104,7 @@ const ProductScreen = props => {
                         fontWeight: 'bold',
                         color: 'black',
                       }}>
-                      {`QTY: ${itemData?.item?quantity}`}
+                      {`QTY: ${itemData?.item?.quantity}`}
                     </Text>
                   </View>
                   <TouchableOpacity
