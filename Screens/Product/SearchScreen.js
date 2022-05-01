@@ -46,9 +46,9 @@ const SearchScreen = props => {
           numColumns={2}
           renderItem={itemData => {
             const addToCartHandler = () => {
-              dispatch(CartAction.addToCartAction(itemData.item));
+              dispatch(CartAction.addToCartAction(itemData?.item));
             };
-            if (itemData.item.name.includes(serach)) {
+            if (itemData?.item?.title.includes(serach)) {
               return (
                 <View
                   style={{
@@ -75,7 +75,7 @@ const SearchScreen = props => {
                         width: '100%',
                         resizeMode: 'contain',
                       }}
-                      source={{uri: itemData.item.thumbNail}}
+                      source={{uri: itemData?.item?.image}}
                     />
                   </TouchableOpacity>
 
@@ -87,14 +87,14 @@ const SearchScreen = props => {
                       alignItems: 'center',
                       marginTop: 5,
                     }}>
-                    <Text numberOfLines={1}>{itemData.item.name}</Text>
+                    <Text numberOfLines={1}>{itemData?.item?.title}</Text>
                     <Text
                       style={{
                         fontSize: 12,
                         fontWeight: 'bold',
                         color: 'orange',
                       }}>
-                      {itemData.item.priceUnit}
+                      {itemData?.item?.priceUnit}
                     </Text>
                   </View>
 

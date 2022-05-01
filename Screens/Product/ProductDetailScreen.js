@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import MainHeader from '../../Components/MainHeader';
-const ProductDetail = ({route}) => {
+const ProductDetail = (props, {route}) => {
   const product = route.params.product;
   const clickEventListener = () => {
     Alert.alert('Success', 'Product has beed added to cart');

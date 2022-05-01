@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {View, Text} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaIcon from '../Components/MaIcon';
 
 import HomeScreen from '../Screens/Product/HomeScreen';
@@ -18,7 +18,7 @@ const Bottom = createBottomTabNavigator();
 
 const Productnavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Product Screen" component={ProductScreen} />
       <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
     </Stack.Navigator>
@@ -28,10 +28,10 @@ const Productnavigator = () => {
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Bottom.Navigator tabBarOptions={{ showLabel: false }}>
+      <Bottom.Navigator tabBarOptions={{showLabel: false, headerShown: false}}>
         <Bottom.Screen
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarIcon: ({focused}) => (
               <View
                 style={{
                   height: 30,
@@ -50,7 +50,7 @@ const Navigator = () => {
         />
         <Bottom.Screen
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarIcon: ({focused}) => (
               <View
                 style={{
                   height: 30,
@@ -69,7 +69,7 @@ const Navigator = () => {
         />
         <Bottom.Screen
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarIcon: ({focused}) => (
               <View
                 style={{
                   height: 30,
@@ -88,7 +88,7 @@ const Navigator = () => {
         />
         <Bottom.Screen
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarIcon: ({focused}) => (
               <View
                 style={{
                   height: 30,
@@ -107,7 +107,7 @@ const Navigator = () => {
         />
         <Bottom.Screen
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarIcon: ({focused}) => (
               <View
                 style={{
                   height: 30,

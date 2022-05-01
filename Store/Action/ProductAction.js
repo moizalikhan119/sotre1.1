@@ -22,24 +22,3 @@ export const deleteCartItem = id => {
     });
   };
 };
-
-export const userSignUpAction = (email, password) => {
-  return async dispatch => {
-    var myHeaders = new Headers();
-    myHeaders.append(
-      'Cookie',
-      'session=eyJ1c2VyRW1haWwiOiJUZXN0MTIzNDVAZ21haWwuY29tIn0=; session.sig=rPHXjrOcmwIuMqpV5WtpLLvMIIA',
-    );
-
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-      redirect: 'follow',
-    };
-
-    fetch('http://54.67.81.85:3000/users', requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-  };
-};

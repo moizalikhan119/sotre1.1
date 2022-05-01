@@ -27,14 +27,14 @@ const ProductScreen = props => {
             numColumns={2}
             renderItem={itemData => {
               const addToCartHandler = () => {
-                dispatch(CartAction.addToCartAction(itemData.item));
+                dispatch(CartAction.addToCartAction(itemData?.item));
               };
 
               return (
                 <TouchableOpacity
                   onPress={() =>
                     props.navigation.navigate('ProductDetail', {
-                      product: itemData.item,
+                      product: itemData?.item,
                     })
                   }
                   style={{
@@ -62,7 +62,7 @@ const ProductScreen = props => {
                           width: '90%',
                           resizeMode: 'contain',
                         }}
-                        source={{uri: itemData.item.thumbNail}}
+                        source={{uri: itemData?.item?.image}}
                       />
                     </TouchableOpacity>
                   </View>
@@ -79,7 +79,7 @@ const ProductScreen = props => {
                         fontWeight: '600',
                         color: 'black',
                       }}>
-                      {itemData.item.name}
+                      {itemData?.item?.title}
                     </Text>
                     <Text
                       style={{
@@ -88,7 +88,7 @@ const ProductScreen = props => {
                         fontWeight: '600',
                         color: 'black',
                       }}>
-                      Rs {itemData.item.price}
+                      Rs {itemData?.item?.price}
                     </Text>
                     <Text
                       style={{
@@ -96,7 +96,7 @@ const ProductScreen = props => {
                         fontWeight: 'bold',
                         color: Colors.primary,
                       }}>
-                      {itemData.item.priceUnit}
+                      {itemData?.item?.priceUnit}
                     </Text>
                     <Text
                       style={{
@@ -104,7 +104,7 @@ const ProductScreen = props => {
                         fontWeight: 'bold',
                         color: 'black',
                       }}>
-                      {`QTY: ${itemData.item.quantity}`}
+                      {`QTY: ${itemData?.item?quantity}`}
                     </Text>
                   </View>
                   <TouchableOpacity

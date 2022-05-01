@@ -6,7 +6,7 @@ export const CATEGORIES = [
     description:
       '95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.',
     category: "women's clothing",
-    image: 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg',
+    imageUrl: 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg',
     rating: {rate: 3.6, count: 145},
   },
   {
@@ -240,8 +240,13 @@ export const ALLPRODUCTS = [
   },
   {
     id: 20,
-    name: 'Car',
-    imageUrl:
+    title: 'Car',
+    price: 22.3,
+    description:
       'https://pv-magazine-usa.com/wp-content/uploads/sites/2/2019/10/FordEV-1200x800.jpeg',
+    category: "men's clothing",
+    image:
+      'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
+    rating: {rate: 4.1, count: 259},
   },
 ];

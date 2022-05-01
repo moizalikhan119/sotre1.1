@@ -98,7 +98,7 @@ const HomeScreen = props => {
                         alignItems: 'center',
                         borderRadius: 10,
                       }}
-                      source={{uri: itemData.item.imageUrl}}
+                      source={{uri: itemData?.item?.imageUrl}}
                     />
                   </View>
 
@@ -111,7 +111,7 @@ const HomeScreen = props => {
                     }}>
                     <Text
                       style={{fontSize: 10, fontWeight: '600', color: 'black'}}>
-                      {itemData.item.name}
+                      {itemData?.item?.name}
                     </Text>
                   </View>
                 </TouchableOpacity>
@@ -141,7 +141,7 @@ const HomeScreen = props => {
             numColumns={2}
             renderItem={itemData => {
               const addToCartHandler = () => {
-                dispatch(CartAction.addToCartAction(itemData.item));
+                dispatch(CartAction.addToCartAction(itemData?.item));
               };
 
               return (
@@ -171,7 +171,7 @@ const HomeScreen = props => {
                         width: '100%',
                         resizeMode: 'contain',
                       }}
-                      source={{uri: itemData.item.thumbNail}}
+                      source={{uri: itemData?.item?.image}}
                     />
                   </TouchableOpacity>
                   <Text
@@ -182,7 +182,7 @@ const HomeScreen = props => {
                       fontWeight: '400',
                       color: 'black',
                     }}>
-                    {itemData.item.name}
+                    {itemData?.item?.title}
                   </Text>
                   <View
                     style={{
@@ -192,14 +192,14 @@ const HomeScreen = props => {
                       alignItems: 'center',
                       marginTop: 5,
                     }}>
-                    <Text numberOfLines={1}>{itemData.item.name}</Text>
+                    <Text numberOfLines={1}>{itemData?.item?.title}</Text>
                     <Text
                       style={{
                         fontSize: 12,
                         fontWeight: 'bold',
                         color: 'orange',
                       }}>
-                      {itemData.item.priceUnit}
+                      {itemData?.item?.priceUnit}
                     </Text>
                   </View>
 

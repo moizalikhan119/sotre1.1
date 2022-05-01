@@ -11,5 +11,3 @@ export const cartQtyAction = {
 export const deleteCartItemActionConst = {
   DELETE_CART_ITEM: 'DELETE_CART_ITEM',
 };
-
-

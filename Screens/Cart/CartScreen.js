@@ -11,7 +11,7 @@ const CartScreen = props => {
 
   const renderCartList = itemData => {
     const deleteCartItem = () => {
-      dispatch(CartItemAction.deleteCartItem(itemData.item.id));
+      dispatch(CartItemAction.deleteCartItem(itemData?.item?.id));
     };
 
     return (
@@ -36,7 +36,7 @@ const CartScreen = props => {
           }}>
           <Image
             style={{height: '90%', width: '90%', resizeMode: 'contain'}}
-            source={{uri: itemData.item.thumbNail}}
+            source={{uri: itemData?.item?.image}}
           />
         </View>
 
@@ -47,11 +47,11 @@ const CartScreen = props => {
             justifyContent: 'center',
           }}>
           <Text style={{fontSize: 13, fontWeight: '600', color: 'black'}}>
-            {itemData.item.name}
+            {itemData?.item?.title}
           </Text>
           <Text
             style={{fontSize: 13, fontWeight: 'bold', color: Colors.primary}}>
-            {itemData.item.priceUnit}
+            {itemData?.item?.priceUnit}
           </Text>
           <Button onPress={deleteCartItem} title="Delete Cart Item" />
         </View>
