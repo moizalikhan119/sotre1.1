@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import MainHeader from '../../Components/MainHeader';
 
@@ -10,7 +10,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import * as CartAction from '../../Store/Action/ProductAction';
 import Colors from '../../Constants/Colors';
 const SearchScreen = props => {
@@ -20,9 +20,9 @@ const SearchScreen = props => {
   const [serach, setSearch] = useState('');
 
   return (
-    <View style={{ height: '100%', width: '100%', backgroundColor: 'white' }}>
+    <View style={{height: '100%', width: '100%', backgroundColor: 'white'}}>
       <MainHeader onCart={() => props.navigation.navigate('cartScreen')} />
-      <View style={{ height: 50, width: '100%', padding: 5 }}>
+      <View style={{height: 50, width: '100%', padding: 5}}>
         <TextInput
           onChangeText={text => setSearch(text)}
           style={{
@@ -68,14 +68,14 @@ const SearchScreen = props => {
                     justifyContent: 'center',
                     alignItems: 'center',
                   }}>
-                  <TouchableOpacity style={{ height: '60%', width: '100%' }}>
+                  <TouchableOpacity style={{height: '60%', width: '100%'}}>
                     <Image
                       style={{
                         height: '100%',
                         width: '100%',
                         resizeMode: 'contain',
                       }}
-                      source={{ uri: itemData.item.thumbNail }}
+                      source={{uri: itemData.item.thumbNail}}
                     />
                   </TouchableOpacity>
 
@@ -89,7 +89,11 @@ const SearchScreen = props => {
                     }}>
                     <Text numberOfLines={1}>{itemData.item.name}</Text>
                     <Text
-                      style={{ fontSize: 12, fontWeight: 'bold', color: 'red' }}>
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 'bold',
+                        color: 'orange',
+                      }}>
                       {itemData.item.priceUnit}
                     </Text>
                   </View>

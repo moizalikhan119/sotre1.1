@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainHeader from '../../Components/MainHeader';
-import { useSelector, useDispatch } from 'react-redux';
-import { SliderBox } from 'react-native-image-slider-box';
+import {useSelector, useDispatch} from 'react-redux';
+import {SliderBox} from 'react-native-image-slider-box';
 import Colors from '../../Constants/Colors';
 import * as CartAction from '../../Store/Action/ProductAction';
 const HomeScreen = props => {
@@ -11,13 +11,13 @@ const HomeScreen = props => {
   const dispatch = useDispatch();
 
   const imageArray = [
-    'https://cdn.pixabay.com/photo/2018/08/08/16/17/shoes-3592530__340.jpg',
-    'https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082__340.jpg',
-    'https://cdn.pixabay.com/photo/2016/01/26/21/57/wedding-rings-1163321__340.jpg',
+    '../Assets/Images/slider1',
+    '../Assets/Images/slider2',
+    '../Assets/Images/slider3',
   ];
 
   return (
-    <View style={{ height: '100%', width: '100%' }}>
+    <View style={{height: '100%', width: '100%'}}>
       <MainHeader onCart={() => props.navigation.navigate('cartScreen')} />
       <SliderBox
         images={imageArray}
@@ -48,10 +48,10 @@ const HomeScreen = props => {
           margin: 0,
           backgroundColor: 'rgba(128, 128, 128, 0.92)',
         }}
-        ImageComponentStyle={{ borderRadius: 10, width: '97%', marginTop: 5 }}
+        ImageComponentStyle={{borderRadius: 10, width: '97%', marginTop: 5}}
         imageLoadingColor="#2196F3"
       />
-      <View style={{ width: '100%', alignItems: 'center' }}>
+      <View style={{width: '100%', alignItems: 'center'}}>
         <Text
           style={{
             marginTop: 5,
@@ -98,7 +98,7 @@ const HomeScreen = props => {
                         alignItems: 'center',
                         borderRadius: 10,
                       }}
-                      source={{ uri: itemData.item.imageUrl }}
+                      source={{uri: itemData.item.imageUrl}}
                     />
                   </View>
 
@@ -110,7 +110,7 @@ const HomeScreen = props => {
                       alignItems: 'center',
                     }}>
                     <Text
-                      style={{ fontSize: 10, fontWeight: '600', color: 'black' }}>
+                      style={{fontSize: 10, fontWeight: '600', color: 'black'}}>
                       {itemData.item.name}
                     </Text>
                   </View>
@@ -134,7 +134,6 @@ const HomeScreen = props => {
             width: '97%',
             marginVertical: 5,
           }}>
-
           <FlatList
             showsVerticalScrollIndicator={false}
             data={allProduct}
@@ -164,8 +163,7 @@ const HomeScreen = props => {
                     justifyContent: 'center',
                     alignItems: 'center',
                   }}>
-
-                  <TouchableOpacity style={{ height: '60%', width: '100%' }}>
+                  <TouchableOpacity style={{height: '60%', width: '100%'}}>
                     <Image
                       style={{
                         marginTop: 20,
@@ -173,11 +171,19 @@ const HomeScreen = props => {
                         width: '100%',
                         resizeMode: 'contain',
                       }}
-                      source={{ uri: itemData.item.thumbNail }}
+                      source={{uri: itemData.item.thumbNail}}
                     />
                   </TouchableOpacity>
-                  <Text style={{ margin: 'auto', width: '90%', fontSize: 13, fontWeight: '400', color: 'black' }}>
-                    {itemData.item.name}</Text>
+                  <Text
+                    style={{
+                      margin: 'auto',
+                      width: '90%',
+                      fontSize: 13,
+                      fontWeight: '400',
+                      color: 'black',
+                    }}>
+                    {itemData.item.name}
+                  </Text>
                   <View
                     style={{
                       height: '10%',
@@ -188,7 +194,11 @@ const HomeScreen = props => {
                     }}>
                     <Text numberOfLines={1}>{itemData.item.name}</Text>
                     <Text
-                      style={{ fontSize: 12, fontWeight: 'bold', color: 'red' }}>
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 'bold',
+                        color: 'orange',
+                      }}>
                       {itemData.item.priceUnit}
                     </Text>
                   </View>

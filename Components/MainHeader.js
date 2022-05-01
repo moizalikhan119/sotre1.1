@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../Constants/Colors';
 import MaIcon from './MaIcon';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 const MainHeader = props => {
   const allCartItems = useSelector(state => state.product.myCart);
 
@@ -19,20 +19,8 @@ const MainHeader = props => {
         borderBottomEndRadius: 20,
         flexDirection: 'row',
       }}>
-      {/* <TouchableOpacity
-        onPress={props.onBack}
-        style={{
-          height: '100%',
-          width: '15%',
-
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        {props.back && <MaIcon iconName="keyboard-backspace" />}
-      </TouchableOpacity> */}
       <TouchableOpacity
         onPress={props.onBack}
-
         style={{
           height: '100%',
           width: '15%',
@@ -41,9 +29,7 @@ const MainHeader = props => {
           alignItems: 'center',
           flexDirection: 'row',
         }}>
-
         <MaIcon iconName="arrow-left" />
-
       </TouchableOpacity>
       <View
         style={{
@@ -54,7 +40,7 @@ const MainHeader = props => {
           alignItems: 'center',
         }}>
         <Image
-          style={{ height: 110, width: 130, resizeMode: 'contain' }}
+          style={{height: 110, width: 130, resizeMode: 'contain'}}
           source={require('../Assets/Images/Logo.png')}
         />
       </View>

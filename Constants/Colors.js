@@ -1,4 +1,4 @@
 export default {
   headerColor: 'white',
-  primary: 'red',
+  primary: 'orange',
 };

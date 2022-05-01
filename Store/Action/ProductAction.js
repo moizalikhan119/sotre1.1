@@ -41,33 +41,5 @@ export const userSignUpAction = (email, password) => {
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-
-    // var myHeaders = new Headers();
-    // myHeaders.append('Content-Type', 'application/json');
-
-    // var raw = JSON.stringify({
-    //   email: email,
-    //   password: password,
-    //   userType: 'publisher',
-
-    // });
-
-    // var requestOptions = {
-    //   method: 'POST',
-    //   headers: myHeaders,
-    //   body: raw,
-    //   redirect: 'follow',
-    // };
-
-    // fetch(`${BaseUrl}/users/signup`, requestOptions)
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     if (result.statusCode === 400) {
-    //       alert('Please enter a valid email');
-    //     } else {
-    //       alert('user created');
-    //     }
-    //   })
-    //   .catch(error => console.log('error', error));
   };
 };
